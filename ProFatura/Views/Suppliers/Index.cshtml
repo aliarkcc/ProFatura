@@ -1,0 +1,53 @@
+﻿@using ProFatura.Entity.Concrete
+@model List<Supplier>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ürünler</h4>
+            <a href="/Product/AddProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Firma Adı</th>
+                                    <th>Mail</th>
+                                    <th>Telefon</th>
+                                    <th>Fax</th>
+                                    <th>Vergi No</th>
+                                    <th>Durum</th>
+                                    <th>Hareketler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.SupplierId</td>
+                                        <td>@item.SupplierName</td>
+                                        <td>@item.SupplierMail</td>
+                                        <td>@item.SupplierPhone</td>
+                                        <td>@item.SupplierFax</td>
+                                        <td>@item.SupplierTaxNo</td>
+                                        <td>
+                                            <label class="badge badge-info">on hold</label>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary">view</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

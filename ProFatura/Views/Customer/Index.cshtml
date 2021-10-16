@@ -1,0 +1,53 @@
+﻿@using ProFatura.Entity.Concrete
+@model List<Customer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Müşteriler</h4>
+            <a href="/Customer/AddCustomer" class="btn btn-primary">Yeni Müşteri Ekle</a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Müşteri Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>Telefon Numarası</th>
+                                    <th>Mail Adresi</th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>Durum</th>
+                                    <th>Hareketler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CustomerId</td>
+                                        <td>@item.CustomerSurname</td>
+                                        <td>@item.CustomerName</td>
+                                        <td>@item.CustomerNumber</td>
+                                        <td>@item.CustomerMail</td>
+                                        <td>@item.CustomerRegisterDate</td>
+                                        <td>
+                                            <label class="badge badge-success">Closed</label>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary">View</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

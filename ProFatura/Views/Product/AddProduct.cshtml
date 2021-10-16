@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/tema/template/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="~/tema/template/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2/select2.min.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ürün Ekleme</h4>
+                    <form class="forms-sample" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Ürün Adı</label>
+                            <input type="text" class="form-control" name="ProductName">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Fiyatı</label>
+                            <input type="number" placeholder="0.00" required min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" class="form-control" name="UnitPrice">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Kdv Oranı</label>
+                            <input type="number" class="form-control" name="Tax">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Açıklaması</label>
+                            <input type="text" class="form-control" name="PDescription">
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Ekle</button>
+                        <a href="Index" class="btn btn-light">Çıkış</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

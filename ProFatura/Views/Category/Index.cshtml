@@ -1,0 +1,45 @@
+﻿@using ProFatura.Entity.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Müşteriler</h4>
+            <a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Kategori Adı</th>
+                                    <th>Durum</th>
+                                    <th>Hareketler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CategoryId</td>
+                                        <td>@item.CategoryName</td>
+                                        <td>
+                                            <label class="badge badge-success">Closed</label>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary">View</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

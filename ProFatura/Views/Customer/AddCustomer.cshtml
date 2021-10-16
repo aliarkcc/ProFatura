@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "AddCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/tema/template/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="~/tema/template/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2/select2.min.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Müşteri Ekleme</h4>
+                    <form class="forms-sample" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Müşteri Adı</label>
+                            <input type="text" class="form-control" name="CustomerName" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label >Soyadı</label>
+                            <input type="text" class="form-control" name="CustomerSurname" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Telefon Numarası</label>
+                            <input type="text" class="form-control" name="CustomerNumber" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="cemail">E-Mail (required)</label>
+                            <input id="cemail" class="form-control" type="email" name="CustomerMail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Ekle</button>
+                        <a href="Index" class="btn btn-light">Çıkış</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
