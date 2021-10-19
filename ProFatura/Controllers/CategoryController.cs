@@ -33,5 +33,23 @@ namespace ProFatura.Controllers
             _categoryService.Add(category);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _categoryService.Delete(id);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var values = _categoryService.Get(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult Update(Category category)
+        {
+            _categoryService.Update(category);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace ProFatura.Service.Concrete
 {
@@ -23,17 +24,22 @@ namespace ProFatura.Service.Concrete
             _databaseContext.Database.ExecuteSqlRaw("exec [dbo].[sp_AddProduct] @name='"+entity.ProductName+"',@unitprice='"+entity.UnitPrice+"',@tax='"+entity.Tax+"',@description='"+entity.PDescription+"'");
         }
 
-        public void Delete(Product entity)
+        public void Delete(int id)
         {
-            _databaseContext.Database.ExecuteSqlRaw($"sp_DeleteProduct{entity.ProductId}");
+            _databaseContext.Database.ExecuteSqlRaw($"sp_DeleteProduct{id}");
         }
 
-        public Product Get(string name)
+        public List<Product> Get(string name)
         {
             return _databaseContext.Products.FromSqlRaw($"sp_GetProduct{name}").FirstOrDefault();
         }
 
-        public List<Product> GetAll()
+        public List<Product> Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             return _databaseContext.Products.FromSqlRaw($"sp_GetAllProducts").ToList();
         }

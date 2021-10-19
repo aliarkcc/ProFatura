@@ -1,0 +1,36 @@
+﻿@using ProFatura.Entity.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/tema/template/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="~/tema/template/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2/select2.min.css">
+<link rel="stylesheet" href="~/tema/template/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<link rel="stylesheet" href="~/tema/template/css/vertical-layout-dark/style.css">
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Kategori Güncelleme</h4>
+                    <form class="forms-sample" method="post">
+                        <div class="form-group">
+                            @foreach (var item in Model)
+                            {
+                                <input style="visibility: hidden;" type="text"  class="form-control" value="@item.CategoryId" name="CategoryId" placeholder="Name" readonly>
+                                <label for="exampleInputName2">Kategori Adı</label>
+                                <input type="text" class="form-control" value="@item.CategoryName" name="CategoryName" placeholder="Name">
+                            }
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Güncelle</button>
+                        <a href="Index" class="btn btn-light">Çıkış</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
